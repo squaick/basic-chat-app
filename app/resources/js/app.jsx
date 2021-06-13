@@ -1,2 +1,2 @@
-mix.js('resources/js/app.jsx', 'public/js')
-   .react();
+import React from "react";
+import Index from "./components/index";
