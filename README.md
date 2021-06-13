@@ -1,5 +1,5 @@
 # basic-chat-app
-A basic chat app built with ReactJS &amp; Socket.IO
+A basic chat app built with ReactJS (with Laravel Mix) &amp; Socket.IO
 
 ## Installation
 
