@@ -7,6 +7,6 @@
     </head>
     <body class="antialiased bg-gray-100 dark:bg-gray-900">
         <div id="app"></div>
-        <script src="/js/app.js"></script>
+        <script src="/js/index.js"></script>
     </body>
 </html>
