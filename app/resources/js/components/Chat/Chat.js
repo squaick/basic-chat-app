@@ -12,10 +12,21 @@ const Chat = ({ location }) => {
         const { name } = queryString.parse(location.search);
 
         socket = io(CHTSERV)
-        socket.emit('new-user', name)
+
+        socket.emit('new-user', {name}, (error) => {
+            if(error) {
+                alert(error);
+            }
+        });
+
         setName(name);
 
         console.log(socket);
+
+        return () => {
+            socket.emit('disconnect');
+            socket.off();
+        }
     }, [CHTSERV, location.search])
 
     return (

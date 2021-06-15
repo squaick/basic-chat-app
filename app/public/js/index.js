@@ -191,9 +191,19 @@ var Chat = function Chat(_ref) {
         name = _queryString$parse.name;
 
     socket = (0,socket_io_client__WEBPACK_IMPORTED_MODULE_2__.default)(CHTSERV);
-    socket.emit('new-user', name);
+    socket.emit('new-user', {
+      name: name
+    }, function (error) {
+      if (error) {
+        alert(error);
+      }
+    });
     setName(name);
     console.log(socket);
+    return function () {
+      socket.emit('disconnect');
+      socket.off();
+    };
   }, [CHTSERV, location.search]);
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
     children: "This is chat component."
