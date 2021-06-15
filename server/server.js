@@ -5,9 +5,13 @@ const {addUser, removeUser, getUser} = require('./users');
 io.on('connection', socket => {
     // Emit on new user joined
     console.log("New connection!");
-    socket.on('new-user', name => {
-      // addUser(name) to add user to array
-      console.log("New user! name: " + name);
+
+    socket.on('new-user', ({name}, callback) => {
+      const { error, user } = addUser({ id: socket.id, name});
+
+      if(error) return callback(error);
+
+      console.log("New user! name: " + user.name);
       socket.broadcast.emit('user-connected', name)
     })
 
