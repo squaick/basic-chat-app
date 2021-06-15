@@ -7,7 +7,7 @@ io.on('connection', socket => {
     console.log("New connection!");
     socket.on('new-user', name => {
       // addUser(name) to add user to array
-      console.log("New user!");
+      console.log("New user! name: " + name);
       socket.broadcast.emit('user-connected', name)
     })
 
