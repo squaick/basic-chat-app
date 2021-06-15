@@ -4,8 +4,10 @@ const {addUser, removeUser, getUser} = require('./users');
 
 io.on('connection', socket => {
     // Emit on new user joined
+    console.log("New connection!");
     socket.on('new-user', name => {
       // addUser(name) to add user to array
+      console.log("New user!");
       socket.broadcast.emit('user-connected', name)
     })
 
@@ -14,7 +16,8 @@ io.on('connection', socket => {
     })
 
     socket.on('disconnect', () => {
-      socket.broadcast.emit('user-disconnected', /* user identity */ )
+      socket.broadcast.emit('user-disconnected' )
       // removeUser(..) to remove the user from array
+      console.log("User disconnected");
     })
   })
