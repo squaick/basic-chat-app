@@ -1,4 +1,4 @@
-const io = require('socket.io')(3000);
+const io = require('socket.io')(3000, {cors: {origin: "*",},});
 
 const {addUser, removeUser, getUser} = require('./users');
 
@@ -10,7 +10,7 @@ io.on('connection', socket => {
     })
 
     socket.on('send-chat-message', message => {
-      socket.broadcast.emit('chat-message', { message: message, name: /* user identity */ })
+      socket.broadcast.emit('chat-message', { message: message})
     })
 
     socket.on('disconnect', () => {
