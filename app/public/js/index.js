@@ -159,6 +159,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var query_string__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! query-string */ "./node_modules/query-string/index.js");
 /* harmony import */ var socket_io_client__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! socket.io-client */ "./node_modules/socket.io-client/wrapper.mjs");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -185,12 +193,24 @@ var Chat = function Chat(_ref) {
       name = _useState2[0],
       setName = _useState2[1];
 
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
+      _useState4 = _slicedToArray(_useState3, 2),
+      message = _useState4[0],
+      setMessage = _useState4[1];
+
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]),
+      _useState6 = _slicedToArray(_useState5, 2),
+      messages = _useState6[0],
+      setMessages = _useState6[1];
+
   var CHTSERV = 'localhost:3000';
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     var _queryString$parse = query_string__WEBPACK_IMPORTED_MODULE_1__.parse(location.search),
-        name = _queryString$parse.name;
+        name = _queryString$parse.name; // Start the connection
 
-    socket = (0,socket_io_client__WEBPACK_IMPORTED_MODULE_2__.default)(CHTSERV);
+
+    socket = (0,socket_io_client__WEBPACK_IMPORTED_MODULE_2__.default)(CHTSERV); // Register as new user
+
     socket.emit('new-user', {
       name: name
     }, function (error) {
@@ -205,8 +225,36 @@ var Chat = function Chat(_ref) {
       socket.off();
     };
   }, [CHTSERV, location.search]);
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    // When chat message comes
+    socket.on('chat-message', function (_ref2) {
+      var user = _ref2.user,
+          message = _ref2.message;
+      console.log("".concat(user, " : ").concat(message));
+      setMessages([].concat(_toConsumableArray(messages), [message]));
+    });
+  }, [messages]);
+
+  var sendMessage = function sendMessage(event) {
+    event.preventDefault();
+
+    if (message) {
+      socket.emit('send-chat-message', message, function () {
+        return setMessage('');
+      });
+    }
+  };
+
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-    children: "This is chat component."
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
+      value: message,
+      onChange: function onChange(event) {
+        return setMessage(event.target.value);
+      },
+      onKeyPress: function onKeyPress(event) {
+        return event.key === 'Enter' ? sendMessage(event) : null;
+      }
+    })
   });
 };
 

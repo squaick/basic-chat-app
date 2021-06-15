@@ -6,13 +6,18 @@ let socket;
 
 const Chat = ({ location }) => {
     const [name, setName] = useState('');
+    const [message, setMessage] = useState('');
+    const [messages, setMessages] = useState([]);
+
     const CHTSERV = 'localhost:3000';
 
     useEffect(() => {
         const { name } = queryString.parse(location.search);
 
+        // Start the connection
         socket = io(CHTSERV)
 
+        // Register as new user
         socket.emit('new-user', {name}, (error) => {
             if(error) {
                 alert(error);
@@ -29,9 +34,30 @@ const Chat = ({ location }) => {
         }
     }, [CHTSERV, location.search])
 
+    useEffect(() => {
+        // When chat message comes
+        socket.on('chat-message', ({user, message}) => {
+            console.log(`${user} : ${message}`);
+
+            setMessages([...messages, message]);
+        })
+    }, [messages]);
+
+    const sendMessage = (event) => {
+        event.preventDefault();
+
+        if(message){
+            socket.emit('send-chat-message', message, () => setMessage(''))
+        }
+    }
+
+
+
     return (
         <div>
-           This is chat component. 
+                <input value={message} onChange={(event) => setMessage(event.target.value)}
+                onKeyPress={event => event.key === 'Enter' ? sendMessage(event) : null}
+                />
         </div>
     )
 }
