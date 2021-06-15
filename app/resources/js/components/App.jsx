@@ -1,9 +1,16 @@
+import {BrowserRouter as Router, Route } from 'react-router-dom';
+
+import Join from "./Join/Join";
+import Chat from "./Chat/Chat";
+
+
 function App() {
     return (
-        <div className="container">
-            <h1>Hi there</h1>
-        </div>
+        <Router>
+            <Route path="/" exact component={Join} />
+            <Route path="/chat" component={Chat} />
+        </Router>
     )
 }
 
-export default App
+export default App;
