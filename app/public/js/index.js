@@ -114,11 +114,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/esm/react-router.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/esm/react-router.js");
 /* harmony import */ var _Join_Join__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Join/Join */ "./resources/js/components/Join/Join.js");
 /* harmony import */ var _Chat_Chat__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Chat/Chat */ "./resources/js/components/Chat/Chat.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _App_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./App.css */ "./resources/js/components/App.css");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
 
 
 
@@ -126,12 +128,12 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function App() {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_3__.BrowserRouter, {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Route, {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.BrowserRouter, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Route, {
       path: "/",
       exact: true,
       component: _Join_Join__WEBPACK_IMPORTED_MODULE_0__.default
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Route, {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Route, {
       path: "/chat",
       component: _Chat_Chat__WEBPACK_IMPORTED_MODULE_1__.default
     })]
@@ -178,6 +180,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 /* harmony import */ var _Join_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Join.css */ "./resources/js/components/Join/Join.css");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
@@ -208,17 +211,24 @@ var Join = function Join() {
     className: "joinContainer",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
       className: "sign",
-      align: "center",
       children: "Basic Chat App"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
-      className: "un",
+      className: "username",
       type: "text",
-      align: "center",
-      placeholder: "Username"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
-      "class": "submitJoin",
-      align: "center",
-      children: "Enter Chat"
+      placeholder: "Username..",
+      onChange: function onChange(event) {
+        return setName(event.target.value);
+      }
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_3__.Link, {
+      onClick: function onClick(event) {
+        return !name ? event.preventDefault() : null;
+      },
+      to: "/chat?name=".concat(name),
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+        className: "submitJoin",
+        type: "submit",
+        children: "Enter Chat"
+      })
     })]
   });
 };
@@ -247,6 +257,30 @@ react_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/(0,react_jsx_runtime
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/components/App.css":
+/*!***************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/components/App.css ***!
+  \***************************************************************************************************************************************************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
+// Imports
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, "body {\n    background: linear-gradient(to right, #b92b27, #1565C0);\n    font-family: Arial, Helvetica, sans-serif;\n}", ""]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/components/Join/Join.css":
 /*!*********************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/components/Join/Join.css ***!
@@ -264,7 +298,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "body {\n    background: linear-gradient(to right, #b92b27, #1565C0);\n    font-family: Arial, Helvetica, sans-serif;\n}\n\n.joinContainer {\n    background-color: #FFFFFF;\n    width: 400px;\n    height: 400px;\n    margin: 16em auto;\n    border-radius: 1.5em;\n    box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);\n}\n\n.sign {\n    padding-top: 40px;\n    color: #8C55AA;\n    font-family: Arial, Helvetica, sans-serif, sans-serif;\n    font-weight: bold;\n    font-size: 36px;\n}\n\n.un {\nwidth: 76%;\ncolor: rgb(38, 50, 56);\nfont-weight: bold;\nfont-size: 22px;\nletter-spacing: 1px;\nbackground: rgba(136, 126, 126, 0.04);\npadding: 15px 20px;\nborder: none;\nborder-radius: 20px;\noutline: none;\nbox-sizing: border-box;\nborder: 2px solid rgba(0, 0, 0, 0.02);\nmargin-top: 30px;\nmargin-bottom: 50px;\nmargin-left: 46px;\ntext-align: center;\nmargin-bottom: 27px;\nfont-family: Arial, Helvetica, sans-serif;\n}\n\n\n.un:focus, .pass:focus {\n    border: 2px solid rgba(0, 0, 0, 0.18) !important;\n    \n}\n\n.submitJoin {\n  cursor: pointer;\n    border-radius: 5em;\n    color: #fff;\n    background: linear-gradient(to right, #9C27B0, #E040FB);\n    border: 0;\n    padding-left: 40px;\n    padding-right: 40px;\n    padding-bottom: 10px;\n    padding-top: 10px;\n    font-family: Arial, Helvetica, sans-serif;\n    margin-left: 25%;\n    font-size: 24px;\n    box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);\n}\n\n\n@media (max-width: 600px) {\n    .main {\n        border-radius: 0px;\n    }\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".joinContainer {\n    background-color: #FFFFFF;\n    width: 400px;\n    height: 400px;\n    margin: 16em auto;\n    border-radius: 1.5em;\n    box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);\n}\n\n.sign {\n    text-align: center;\n    padding-top: 40px;\n    color: #8C55AA;\n    font-family: Arial, Helvetica, sans-serif, sans-serif;\n    font-weight: bold;\n    font-size: 36px;\n}\n\n.username {\nwidth: 76%;\ncolor: rgb(38, 50, 56);\nfont-weight: bold;\nfont-size: 22px;\nletter-spacing: 1px;\nbackground: rgba(136, 126, 126, 0.04);\npadding: 15px 20px;\nborder: none;\nborder-radius: 20px;\noutline: none;\nbox-sizing: border-box;\nborder: 2px solid rgba(0, 0, 0, 0.02);\nmargin-top: 30px;\nmargin-bottom: 50px;\nmargin-left: 46px;\ntext-align: center;\nmargin-bottom: 27px;\nfont-family: Arial, Helvetica, sans-serif;\n}\n\n\n.un:focus, .pass:focus {\n    border: 2px solid rgba(0, 0, 0, 0.18) !important;\n    \n}\n\n.submitJoin {\n  cursor: pointer;\n    border-radius: 5em;\n    color: #fff;\n    background: linear-gradient(to right, #9C27B0, #E040FB);\n    border: 0;\n    padding-left: 40px;\n    padding-right: 40px;\n    padding-bottom: 10px;\n    padding-top: 10px;\n    font-family: Arial, Helvetica, sans-serif;\n    margin-left: 25%;\n    font-size: 24px;\n    box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);\n}\n\n\n@media (max-width: 600px) {\n    .main {\n        border-radius: 0px;\n    }\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -35364,6 +35398,36 @@ if (false) {} else {
   module.exports = __webpack_require__(/*! ./cjs/scheduler-tracing.development.js */ "./node_modules/scheduler/cjs/scheduler-tracing.development.js");
 }
 
+
+/***/ }),
+
+/***/ "./resources/js/components/App.css":
+/*!*****************************************!*\
+  !*** ./resources/js/components/App.css ***!
+  \*****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_App_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!../../../node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./App.css */ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/components/App.css");
+
+            
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_App_css__WEBPACK_IMPORTED_MODULE_1__.default, options);
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_App_css__WEBPACK_IMPORTED_MODULE_1__.default.locals || {});
 
 /***/ }),
 

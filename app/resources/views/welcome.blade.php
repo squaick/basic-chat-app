@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Basic Chat App</title>
     </head>
-    <body class="antialiased bg-gray-100 dark:bg-gray-900">
+    <body>
         <div id="app"></div>
         <script src="/js/index.js"></script>
     </body>

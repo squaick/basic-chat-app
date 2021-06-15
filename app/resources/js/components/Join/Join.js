@@ -9,9 +9,12 @@ const Join = () => {
 
     return (
     <div className="joinContainer">
-        <p className="sign" align="center">Basic Chat App</p>
-        <input className="un" type="text" align="center" placeholder="Username"/>
-        <button class="submitJoin" align="center">Enter Chat</button>
+        <p className="sign">Basic Chat App</p>
+        <input className="username" type="text"  placeholder="Username.."
+        onChange={(event) => setName(event.target.value)} />
+        <Link onClick={event => !name ? event.preventDefault() : null} to={`/chat?name=${name}`}>
+            <button className="submitJoin" type="submit">Enter Chat</button>
+        </Link>
     </div>
     )
 }

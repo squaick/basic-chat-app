@@ -1,8 +1,3 @@
-body {
-    background: linear-gradient(to right, #b92b27, #1565C0);
-    font-family: Arial, Helvetica, sans-serif;
-}
-
 .joinContainer {
     background-color: #FFFFFF;
     width: 400px;
@@ -13,6 +8,7 @@ body {
 }
 
 .sign {
+    text-align: center;
     padding-top: 40px;
     color: #8C55AA;
     font-family: Arial, Helvetica, sans-serif, sans-serif;
@@ -20,7 +16,7 @@ body {
     font-size: 36px;
 }
 
-.un {
+.username {
 width: 76%;
 color: rgb(38, 50, 56);
 font-weight: bold;
