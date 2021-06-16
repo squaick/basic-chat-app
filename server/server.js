@@ -12,7 +12,7 @@ io.on('connection', socket => {
       if(error) return callback(error);
 
       socket.broadcast.emit('user-connected', name);
-      socket.broadcast.emit('chat-message', { user: name, message: 'giriş yaptım!'});
+      socket.broadcast.emit('chat-message', { user: name, message: `${name} has entered to chat.`});
 
       callback();
     });
