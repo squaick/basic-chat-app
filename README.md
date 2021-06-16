@@ -1,6 +1,8 @@
 # basic-chat-app
 A basic chat app built with ReactJS (with Laravel Mix) &amp; Socket.IO
 
+![](https://s6.gifyu.com/images/2-1cb3871bdb477fc2d.gif)
+
 ## Installation & Running
 
 Execute the commands below for installing needed dependencies after cloning the project.
