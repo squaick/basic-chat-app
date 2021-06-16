@@ -2,15 +2,15 @@ import './Input.css';
 
 const Input = ({ message, setMessage, sendMessage}) => {
     return (
-        <form className="form">
+        <form className="msger-inputarea">
             <input
-                className="input"
+                className="msger-input"
                 placeholder="Type your message.."
-                value={message} 
-                onChange={(event) => setMessage(event.target.value)}
+                value={message}
+                onChange={({ target: { value } }) => setMessage(value)}
                 onKeyPress={event => event.key === 'Enter' ? sendMessage(event) : null}
             />
-            <button onClick={(event) => sendMessage(event)}>Send</button>
+            <button className="msger-send-btn" onClick={e => sendMessage(e)}>Send</button>
         </form>
     )
 }

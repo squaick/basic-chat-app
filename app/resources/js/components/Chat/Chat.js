@@ -5,6 +5,8 @@ import io from "socket.io-client";
 import Input from '../Input/Input';
 import Messages from '../Messages/Messages';
 
+import './Chat.css';
+
 let socket;
 
 const Chat = ({ location }) => {
@@ -29,8 +31,6 @@ const Chat = ({ location }) => {
 
         setName(name);
 
-        console.log(socket);
-
         return () => {
             socket.emit('disconnect');
             socket.off();
@@ -39,8 +39,8 @@ const Chat = ({ location }) => {
 
     useEffect(() => {
         // When chat message comes
-        socket.on('chat-message', ({user, message}) => {
-            console.log(`${user} : ${message}`);
+        socket.on('chat-message', message => {
+            console.log(message);
 
             setMessages([...messages, message]);
         })
@@ -51,16 +51,21 @@ const Chat = ({ location }) => {
 
         if(message){
             socket.emit('send-chat-message', message, () => setMessage(''))
+            console.log("isim bu:"+message)
+            setMessages([...messages, {user:name, message}]);
         }
     }
 
 
 
     return (
-        <div>
+        <section className="msger">
+            <header className="msger-header">
+                <div className="msger-header-title">Basic Chat App</div>
+            </header>
             <Messages messages={messages} name={name} />
             <Input message={message} setMessage={setMessage} sendMessage={sendMessage} />
-        </div>
+        </section>
     )
 }
 
