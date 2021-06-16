@@ -1,7 +1,7 @@
 # basic-chat-app
 A basic chat app built with ReactJS (with Laravel Mix) &amp; Socket.IO
 
-## Installation
+## Installation & Running
 
 Execute the commands below for installing needed dependencies after cloning the project.
 
@@ -24,3 +24,5 @@ npm install
 #Start server
 npm start
 ```
+
+You can enter to chat from your browser using this link: http://127.0.0.1:9000/
