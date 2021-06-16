@@ -9,6 +9,7 @@ Execute the commands below for installing needed dependencies after cloning the 
 #For client side
 cd basic-chat-app/app
 composer install
+mv .env.example .env
 php artisan key:generate
 npm install
 npm run production
