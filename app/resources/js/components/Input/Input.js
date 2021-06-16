@@ -1,4 +1,4 @@
-
+import './Input.css';
 
 const Input = ({ message, setMessage, sendMessage}) => {
     return (

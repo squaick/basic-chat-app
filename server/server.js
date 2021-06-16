@@ -30,7 +30,7 @@ io.on('connection', socket => {
     socket.on('disconnect', () => {
       const user = removeUser(socket.id);
 
-      socket.broadcast.emit('user-disconnected' , user.name);
+      socket.broadcast.emit('user-disconnected' , user);
 
     });
   })
